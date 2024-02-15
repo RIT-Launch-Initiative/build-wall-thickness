@@ -1,6 +1,6 @@
 clc; clear; close all;
 
-interior_contour_m = csvread('MOC_engine_contour_m.csv');
+interior_contour_m = csvread('RAO_engine_contour_m.csv');
 
 chamber_thickness = 0.15; %[in]
     chamber_thickness_m = chamber_thickness/39.3701; % [m]
@@ -18,7 +18,7 @@ for i = 1:length(interior_contour_m(:,2))
 end
 chamber_curve_end_ind = 2300; % HARDCODED
 
-throat_buffer = 0.25; %[in]
+throat_buffer = 0.20; %[in]
     throat_buffer_m = throat_buffer/39.3701; %[m[
 
 [~,throat_start_index] = min(interior_contour_m(:,2));
@@ -69,5 +69,5 @@ exterior_contour = [x_data,y_data,z_data];
 
 
 
-csvwrite('MOC_exterior_contour.txt',exterior_contour)
-csvwrite('MOC_interior_contour.txt',interior_contour_m)
+csvwrite('RAO_exterior_contour.txt',exterior_contour)
+csvwrite('RAO_interior_contour.txt',interior_contour_m)
