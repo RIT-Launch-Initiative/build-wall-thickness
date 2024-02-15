@@ -67,7 +67,5 @@ y_data = exterior_contour_m';
 z_data  = zeros(length(interior_contour_m(:,1)),1);
 exterior_contour = [x_data,y_data,z_data];
 
-
-
-csvwrite('RAO_exterior_contour.txt',exterior_contour)
-csvwrite('RAO_interior_contour.txt',interior_contour_m)
+writematrix(exterior_contour,'RAO_exterior_contour.txt')
+writematrix(interior_contour_m,'RAO_interior_contour.txt')
